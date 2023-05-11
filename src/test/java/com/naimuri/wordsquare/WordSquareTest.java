@@ -47,7 +47,7 @@ public class WordSquareTest {
     	  hasProperty("word",equalTo("feast")),
         hasProperty("word",equalTo("earth")),
         hasProperty("word",equalTo("armor")),
-        hasProperty("word",equalTo("stone")),
+        hasProperty("word", equalTo("stone")),
         hasProperty("word",equalTo("threw"))
 	  )); 
 	}
