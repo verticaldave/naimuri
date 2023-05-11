@@ -40,8 +40,8 @@ public class WordSquareTest {
 
   @Test  
   public void test_5_x_5_grid() {
-	  
-	  List<AcceptedWord> result = wordSquare.generate("5 aaaeeeefhhmoonssrrrrttttw");
+
+    List<AcceptedWord> result = wordSquare.generate("5 aaaeeeefhhmoonssrrrrttttw");
 
     assertThat(result ,contains(
         hasProperty("word",equalTo("feast")),
