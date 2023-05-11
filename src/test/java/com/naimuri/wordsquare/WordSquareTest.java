@@ -16,62 +16,62 @@ import org.junit.rules.ExpectedException;
 public class WordSquareTest {
   
   private WordSquare wordSquare;
- 
-	@Rule
- 	public ExpectedException expectedException = ExpectedException.none();
-	
-	@Before
-	public void setup() {
-	  wordSquare = new WordSquare();
-	}
-	
-  @Test  
-	public void test_4_x_4_grid() {
 
-     List<AcceptedWord> result = wordSquare.generate("4 oonnnmmeeeedccaa");
+  @Rule
+  public ExpectedException expectedException = ExpectedException.none();
+
+  @Before
+  public void setup() {
+    wordSquare = new WordSquare();
+  }
+
+  @Test  
+  public void test_4_x_4_grid() {
+
+    List<AcceptedWord> result = wordSquare.generate("4 oonnnmmeeeedccaa");
      
-     assertThat(result ,contains(
-         hasProperty("word",equalTo("moan")),
-         hasProperty("word",equalTo("once")),
-         hasProperty("word",equalTo("acme")),
-         hasProperty("word",equalTo("need"))
+    assertThat(result ,contains(
+        hasProperty("word",equalTo("moan")),
+        hasProperty("word",equalTo("once")),
+        hasProperty("word",equalTo("acme")),
+        hasProperty("word",equalTo("need"))
     ));
   }
 
-	@Test  
-	public void test_5_x_5_grid() {
+  @Test  
+  public void test_5_x_5_grid() {
 	  
 	  List<AcceptedWord> result = wordSquare.generate("5 aaaeeeefhhmoonssrrrrttttw");
-	  
-	  assertThat(result ,contains(
-    	  hasProperty("word",equalTo("feast")),
+
+    assertThat(result ,contains(
+        hasProperty("word",equalTo("feast")),
         hasProperty("word",equalTo("earth")),
         hasProperty("word",equalTo("armor")),
         hasProperty("word", equalTo("stone")),
         hasProperty("word",equalTo("threw"))
-	  )); 
-	}
+    )); 
+  }
 	
-	@Test  
-	public void test_5_x_5_grid2() {
+  @Test  
+  public void test_5_x_5_grid2() {
+
+    List<AcceptedWord> result = wordSquare.generate("5 aabbeeeeeeeehmosrrrruttvv");
 	  
-	  List<AcceptedWord> result = wordSquare.generate("5 aabbeeeeeeeehmosrrrruttvv");
-	  
-	  assertThat(result ,contains(
+    assertThat(result ,contains(
         hasProperty("word",equalTo("heart")),
         hasProperty("word",equalTo("ember")),
         hasProperty("word",equalTo("above")),
         hasProperty("word",equalTo("revue")),
         hasProperty("word",equalTo("trees"))
-    )); 
-	}
-	
-	@Test  
+    ));
+  }
+
+  @Test  
   public void test_7_x_7_grid() {
-    
-	  List<AcceptedWord> result = wordSquare.generate("7 aaaaaaaaabbeeeeeeedddddggmmlloooonnssssrrrruvvyyy");
-    
-	  assertThat(result ,contains(
+
+    List<AcceptedWord> result = wordSquare.generate("7 aaaaaaaaabbeeeeeeedddddggmmlloooonnssssrrrruvvyyy");
+
+    assertThat(result ,contains(
         hasProperty("word",equalTo("bravado")),
         hasProperty("word",equalTo("renamed")),
         hasProperty("word",equalTo("analogy")),
@@ -79,6 +79,6 @@ public class WordSquareTest {
         hasProperty("word",equalTo("amoebas")),
         hasProperty("word",equalTo("degrade")),
         hasProperty("word",equalTo("odyssey"))
-    )); 
+    ));
   }
 }
