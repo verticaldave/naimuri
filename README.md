@@ -26,14 +26,15 @@ Starting at index 0 (the first word) the following steps are followed
 **Step 1. The first word (index 0)**
 
 - Create a regular expression with a character class containing all the allowed characters from the input String and an occurrence (length) of the grid size
-- Use the regex to find matches in the dictionary. If there are no matches the search method will throw an exception and it's immediately game over
+- Use the regex to find matches in the dictionary.
 - Given a match, it is verified that there are enough characters in the configuration String to render the word both horizontally and vertically and that we haven't previously matched that word
-- Once verified the first match is stored alongside the characters that were available to search for it. It is also stored as a previously matched index 0 word. This will become important later
+- If there are no matches or validation fails, a NoSuchElementException will be thrown and it's immediately game over
+- Once verified the match is stored alongside the characters that were available to search for it. It is also stored as a previously searched index 0 word. This will become important later
 - Remove the used characters from the available characters
 
 **Step 2. The second word (n = index 1)**
 
-- Create a regular expression where the n -1 character of the word is the character at index n of the word matched in the prior step and the character class comprises all the remaining allowed characters matched in the prior step 
+- Create a regular expression where the n -1 character of the word is the character at index n of the word matched in the prior step. The character class comprises all allowed characters minus those matched in the prior step 
 - Use the regex to find matches in the dictionary.
 - Given a match, it is verified that there are enough characters in the configuration String to render the word both horizontally and vertically and that we haven't previously matched that word
 - Once verified it is stored alongside the characters that were available to search for it. It is also stored as a previously matched index 1 word 
